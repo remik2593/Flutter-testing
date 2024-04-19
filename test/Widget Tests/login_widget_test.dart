@@ -6,17 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  /* W teście widżetu wywołamy funkcję o nazwie testWidgets. 
-  Ta funkcja przyjmuje jako argument ciąg znaków i funkcję. 
-  Ciąg znaków to nazwa testu, a funkcja to funkcja testu. 
-  WidgetTester to klasa, która dostarcza sposób testowania widżetów. 
-  Możesz użyć tej klasy do znajdowania widżetów w drzewie widżetów, 
-  odczytywania i zapisywania stanu widżetu oraz weryfikowania, czy widżet ma określone właściwości.*/
-  testWidgets('Login Widget Test', (WidgetTester tester) async {
-    /* Aby sprawdzić, czy widżet jest renderowany, musimy najpierw zrenderować widżet. 
-    Robimy to za pomocą funkcji pumpWidget. Ta funkcja przyjmuje widżet jako argument i renderuje go.*/
     await tester.pumpWidget(
-      //Dodajemy MaterialApp i ProviderScope widzet jako rodzica widżetu LoginScreen.
       ProviderScope(
         child: MaterialApp(home: LoginScreen()),
       ),
