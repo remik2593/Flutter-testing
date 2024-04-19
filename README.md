@@ -1,1 +1,1 @@
-[ Gałąź testowa zawie]
+Plik zawierający testy z  komentarzami pisane pod projekt Kodecco Testing in Flutter
