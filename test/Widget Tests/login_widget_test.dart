@@ -67,6 +67,7 @@ void main() {
       await tester.tap(loginButton);
 
       await tester.pumpAndSettle();
+      // lekcję 11 zacznij od 1 minuty
     });
   });
 }
