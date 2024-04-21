@@ -1,7 +1,6 @@
 import 'package:Testing/key_constants.dart';
 import 'package:Testing/pages/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -55,7 +54,7 @@ void main() {
     });
   });
   group('Diferent Login Scenarios', () {
-    final loginText = find.byKey(loginScreenTextKey);
+    //final loginText = find.byKey(loginScreenTextKey);
     final emailTextField = find.byKey(emailTextFormKey);
     final passwordTextField = find.byKey(passwordTextFormKey);
     final loginButton = find.byKey(loginButtonKey);
