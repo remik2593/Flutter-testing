@@ -55,19 +55,39 @@ void main() {
     });
   });
   group('Diferent Login Scenarios', () {
-    final emailTextField = find.byKey(emailTextFormKey);
     final loginText = find.byKey(loginScreenTextKey);
+    final emailTextField = find.byKey(emailTextFormKey);
     final passwordTextField = find.byKey(passwordTextFormKey);
     final loginButton = find.byKey(loginButtonKey);
 
     testWidgets('Fail to login with invalid email and password',
         (WidgetTester tester) async {
+      await tester
+          .pumpWidget(ProviderScope(child: MaterialApp(home: LoginScreen())));
+      /* Uzywamy funkcji tester.enterText do wprowadzania tekstu do pól formularza tekstowego. 
+      Ta funkcja przyjmuje pole formularza tekstowego oraz ciąg znaków jako argument. 
+      Ciąg znaków to tekst, który chcesz wprowadzić do pola formularza tekstowego. */
       await tester.enterText(emailTextField, 'abcd');
       await tester.enterText(passwordTextField, 'dupa12');
+
+      /* Funckji tester.tap uywamy do kliknięcia przycisku logowania. Ta funkcja
+      przyjmuje widget jako argument. Widze to ten element, który chcemy kliknąć */
       await tester.tap(loginButton);
 
+      /* Funkcji tester.pumpAndSettle uzywamy do oczekiawania na zakończenie animacji np. loader
+     Ta funkcja przyjmuje czas trwania jaki chcemy poczekać na zakończenie animacji. */
       await tester.pumpAndSettle();
-      // lekcję 11 zacznij od 1 minutyffdsfsfddsfsfdfdfdsfssfdsadsdsa
+
+      /* Funkcji find.text uzywamy do znalezienia tekstu błędu. Ta funkcja przyjmuje
+      teskt, który chcemy znaleźć */
+      var emailErrorText = find.text(kEmailErrorText);
+      var passwordErrorText = find.text(kPasswordErrorText);
+
+      /*Następnie używamy dopasowania findsOneWidget, aby sprawdzić, czy tekst błędu jest obecny w drzewie widżetów. 
+      Jeśli tekst błędu jest obecny, test zostanie zaliczony, w przeciwnym razie test zostanie niezaliczony. */
+
+      expect(emailErrorText, findsOneWidget);
+      expect(passwordErrorText, findsOneWidget);
     });
   });
 }
