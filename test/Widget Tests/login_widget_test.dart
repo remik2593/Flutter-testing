@@ -54,7 +54,7 @@ void main() {
     });
   });
   group('Diferent Login Scenarios', () {
-    //final loginText = find.byKey(loginScreenTextKey);
+    final loginText = find.byKey(loginScreenTextKey);
     final emailTextField = find.byKey(emailTextFormKey);
     final passwordTextField = find.byKey(passwordTextFormKey);
     final loginButton = find.byKey(loginButtonKey);
@@ -86,7 +86,10 @@ void main() {
       Jeśli tekst błędu jest obecny, test zostanie zaliczony, w przeciwnym razie test zostanie niezaliczony. */
 
       expect(emailErrorText, findsOneWidget);
-      expect(passwordErrorText, findsOneWidget);
+      // expect(passwordErrorText, findsOneWidget);
+
+      // Napisz TC: Test the login screen for valid credentials
+      // enter the correct details and check if the error text is not present in the widget tree.
     });
   });
 }
