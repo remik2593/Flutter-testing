@@ -83,7 +83,7 @@ void main() {
       await tester.enterText(passwordTextField, 'haslo');
 
       /* Funkcji tester.tap uywamy do kliknięcia przycisku logowania. Ta funkcja
-      przyjmuje widget jako argument. Widze to ten element, który chcemy kliknąć */
+      przyjmuje widget jako argument */
       await tester.tap(loginButton);
 
       /* Funkcji tester.pumpAndSettle uzywamy do oczekiawania na zakończenie animacji np. loader
@@ -146,7 +146,7 @@ void main() {
       await tester.tap(loginButton);
 
       /* Funkcja 'pump' przyjmuje czas trwania jako argument. 
-      Czas trwania to czas, na który chcesz poczekać na zakończenie animacji. */
+      Czas trwania to czas, który chcesz poczekać na zakończenie animacji. */
       await tester.pump(const Duration(seconds: 1));
       expect(find.byKey(loginCircularProgressKey), findsOneWidget);
 
