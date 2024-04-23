@@ -84,16 +84,16 @@ void main() {
     testWidgets('Happy Path for Quote screen', (WidgetTester tester) async {
       await tester.pumpWidget(createWidgetUnderTest());
 
-      // TC 1
+      // TC 1 Quote screen tests
       expect(find.text('All Quotes'), findsOneWidget);
 
-      // TC 2
+      // TC 2 Loading indicator is present in widget tree
       await tester.pump(const Duration(seconds: 1));
       expect(find.byKey(quotesCircularProgressKey), findsOneWidget);
       await tester.pump(const Duration(seconds: 1));
       expect(find.byKey(quotesCircularProgressKey), findsNothing);
 
-      // TC3
+      // TC3 Quotes are present in the widget tree
       expect(find.text('Test Quote 1'), findsOneWidget);
       expect(find.text('Test Quote 2'), findsOneWidget);
       expect(find.text('Test Quote 3'), findsOneWidget);

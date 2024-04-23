@@ -63,7 +63,6 @@ void main() {
     });
   });
   group('Diferent Login Scenarios', () {
-    final loginText = find.byKey(loginScreenTextKey);
     final emailTextField = find.byKey(emailTextFormKey);
     final passwordTextField = find.byKey(passwordTextFormKey);
     final loginButton = find.byKey(loginButtonKey);
