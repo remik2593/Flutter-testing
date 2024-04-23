@@ -114,6 +114,9 @@ void main() {
       when(() => mockQuotesService.getQuotes())
           .thenAnswer((_) async => mockQuotesForTesting);
 
+      await expectLater(
+          find.byType(LoginScreen), matchesGoldenFile('login_screen.png'));
+
       await tester.enterText(emailTextField, 'example@wp.pl');
       await tester.enterText(passwordTextField, 'haslo123');
 
