@@ -16,3 +16,5 @@ void main() {
 }
 
 // testy są odpalane w terminalu komenda: flutter test integration_test/integration_test.dart
+// Aktualnie testy nie odpalają się na emulatorach jak równie urządzeniach mobilnych
+// temat do weryfikacji po zakończonym kursie !!!
