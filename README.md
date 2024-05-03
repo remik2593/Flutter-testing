@@ -1,1 +1,1 @@
-Plik zawierający testy z  komentarzami pisane pod projekt Kodecco Testing in Flutter
+Plik zawierający testy pisane po projekt Kodecco Testing in Flutter
