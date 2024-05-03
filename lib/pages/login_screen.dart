@@ -28,7 +28,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-
 import 'package:Testing/key_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -111,12 +110,12 @@ class LoginScreen extends ConsumerWidget {
                         if (_formKey.currentState!.validate()) {
                           await loginProvider.login();
 
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (_) => AllQuotesScreen(),
-                          //   ),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => AllQuotesScreen(),
+                            ),
+                          );
                         }
                       },
                       child: loginProvider.isLoading

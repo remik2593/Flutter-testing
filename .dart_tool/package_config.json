@@ -98,6 +98,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_driver",
+      "rootUri": "file:///usr/local/Caskroom/flutter/3.7.6/flutter/packages/flutter_driver",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1",
       "packageUri": "lib/",
@@ -122,6 +128,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "fuchsia_remote_debug_protocol",
+      "rootUri": "file:///usr/local/Caskroom/flutter/3.7.6/flutter/packages/fuchsia_remote_debug_protocol",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "glob",
       "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/glob-2.1.2",
       "packageUri": "lib/",
@@ -144,6 +156,12 @@
       "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "integration_test",
+      "rootUri": "file:///usr/local/Caskroom/flutter/3.7.6/flutter/packages/integration_test",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
     },
     {
       "name": "io",
@@ -236,10 +254,22 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "platform",
+      "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/platform-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "pool",
       "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/pool-1.5.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "process",
+      "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/process-5.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "pub_semver",
@@ -326,6 +356,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "sync_http",
+      "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/sync_http-0.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/term_glyph-1.2.1",
       "packageUri": "lib/",
@@ -386,6 +422,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "webdriver",
+      "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/webdriver-3.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "webkit_inspection_protocol",
       "rootUri": "file:///Users/remikgagala/.pub-cache/hosted/pub.dev/webkit_inspection_protocol-1.2.1",
       "packageUri": "lib/",
@@ -404,7 +446,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2024-04-16T11:59:35.606682Z",
+  "generated": "2024-04-23T07:45:58.406780Z",
   "generator": "pub",
   "generatorVersion": "3.3.1"
 }

@@ -16,6 +16,8 @@ dependencies:
   flutter_riverpod: ^2.2.0
   change_app_package_name: ^1.1.0
   http: ^0.13.5
+  integration_test:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
