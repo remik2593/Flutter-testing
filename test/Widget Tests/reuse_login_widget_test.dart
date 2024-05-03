@@ -1,7 +1,3 @@
-/* Różnica między testem widżetów a testem integracyjnym polega na tym, że test widżetów działa w konsoli, 
-a test integracyjny działa na urządzeniu. Aby wykorzystać test widżetów jako test integracyjny, 
-najpierw przekształcamy widżet w funkcję. Następnie wywołujemy tę funkcję wewnątrz testu integracyjnego */
-
 import 'package:Testing/key_constants.dart';
 import 'package:Testing/notifiers/quotes_notifier.dart';
 import 'package:Testing/pages/login_screen.dart';
@@ -13,12 +9,10 @@ import 'package:mocktail/mocktail.dart';
 
 class MockQuotesService extends Mock implements QuotesService {}
 
-// Wywołanie funkcji wewnątrz testu integracyjnego
 void main() {
   testWidgets('Login Widget Test', loginWidgetTest);
 }
 
-// Przekształcenie widzetu w funkcje
 Future<void> loginWidgetTest(WidgetTester tester) async {
   MockQuotesService mockQuotesService = MockQuotesService();
 
