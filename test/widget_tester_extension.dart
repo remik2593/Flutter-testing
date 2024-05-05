@@ -3,6 +3,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+/* Funkcja rozszerzająca to mechanizm pozwalający na dodanie nowych metod do istniejących typów, 
+nawet tych, których kod źródłowy nie jest dostępny. 
+Jest to użyteczne, gdy chcemy dodać funkcjonalność do klas, których nie możemy modyfikować bezpośrednio 
+Funkcje rozszerzające są deklarowane z typem odbiorcy jako prefiksem nazwy funkcji 
+np. extension WidgetTesterExtension on WidgetTester */
 
 /* Goldeny wymagają nazwy dla zrzutu ekranu. 
 Stworzymy nową funkcję, która przyjmie nazwę widżetu i wygeneruje dla nas nazwę goldena
@@ -134,17 +139,28 @@ const testCaseScreenInfoList = [
       textScaleValue: 1.0),
 ];
 
+// Tworzymy funkcję rozszerzającą dla klasy WidgetTester
 extension WidgetTesterExtension on WidgetTester {
+  /* Funkcja setScreenSize pomoże nam ustawić rozmiar ekranu do testów widżetów 
+  Przekazuje ona nowo utworzoną listę testCaseScreenInfoList do 
+  funkcji setScreenSize i ustawia rozmiar ekranu z wartośćią klasy.
+  PixelRatio to współczynnik skalowania tekstu dla accesibility  */
   Future setScreenSize(TestCaseScreenInfo testCaseScreenInfo) async {
     binding.platformDispatcher.textScaleFactorTestValue =
         testCaseScreenInfo.textScaleValue;
     binding.window.physicalSizeTestValue = testCaseScreenInfo.screenSize;
     binding.window.devicePixelRatioTestValue = testCaseScreenInfo.pixedRatio;
 
+    /* addTearDown to funkcja, która zostanie wywołana po zakończeniu testu. 
+    Używamy tej funkcji, aby zresetować rozmiar ekranu do wartości domyślnej */
     addTearDown(binding.window.clearPhysicalSizeTestValue);
   }
 }
 
+/* Utwórzmy funkcję, która będzie pobierać informacje 
+aby uruchomić test Widżeta dla wielu rozmiarów ekranu 
+Future reprezentuje wartość, która moze być dostępna teraz lub po wykonaniu
+operacji asynchronicznej*/
 Future testWidgetsMultipleScreenSizes(
         String testName,
         Future<void> Function(WidgetTester, TestCaseScreenInfo testCase)
@@ -155,3 +171,6 @@ Future testWidgetsMultipleScreenSizes(
         await testFunction(tester, testCase);
       });
     });
+
+    /* Powyzsza funkcja pobiera nazwę testu, funkcję testową i testera widżetów. 
+    Wywołamy pętlę forEach i uruchomimy testWidgets dla każdego ekranu z naszej listy */
