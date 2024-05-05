@@ -7,16 +7,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-/* Tworzymy klasę aby móc mockować pobieranie cytatów do testów, w których 
-musi być wysłane zapytanie HTTP */
 class MockQuotesService extends Mock implements QuotesService {}
 
 void main() {
   MockQuotesService mockQuotesService = MockQuotesService();
 
-  /* Musimy zwrócić mockowane cytaty, gdy wywoływana jest funkcja getQuotes(). 
-  Stwórzmy funkcję, która zastąpi prawdziwe cytaty mockami. 
-  Dodamy opóźnienie dwóch sekund, aby odwzorować scenariusz rzeczywisty */
   void getQuotesAfter2SecondsDelay() {
     when(() => mockQuotesService.getQuotes()).thenAnswer((_) async {
       return await Future.delayed(
@@ -24,9 +19,6 @@ void main() {
     });
   }
 
-  /* Tworzymy funkcję o nazwie createWidgetUnderTest, która zwraca widżet. 
-  Ta funkcja będzie używana do tworzenia drzewa widżetów dla testu. 
-  Wywołamy tę funkcję wewnątrz metody pumpWidget */
   Widget createWidgetUnderTest() {
     return ProviderScope(
         overrides: [
@@ -38,17 +30,12 @@ void main() {
         ));
   }
 
-  // Wywołanie funkcji mockującej cytaty
   getQuotesAfter2SecondsDelay();
-
-  // POWYŻSZA KONFIGURACJA DOTYCZY SETUPU POD TESTY
 
   group('Quote screen tests', () {
     testWidgets('All Quotes Widget test', (WidgetTester tester) async {
       await tester.pumpWidget(createWidgetUnderTest());
 
-      /* Wywołujemy metode pumpAndSettle zeby wszyskie asynchroniczne operacje 
-    zostały zakończone */
       await tester.pumpAndSettle(Duration(seconds: 2));
 
       expect(find.text('All Quotes'), findsOneWidget);
@@ -58,8 +45,6 @@ void main() {
         (WidgetTester tester) async {
       await tester.pumpWidget(createWidgetUnderTest());
 
-      /* Funkcja 'pump' przyjmuje czas trwania jako argument. 
-      Czas trwania to czas, który chcesz poczekać na zakończenie animacji. */
       await tester.pump(const Duration(seconds: 1));
       expect(find.byKey(quotesCircularProgressKey), findsOneWidget);
       await tester.pump(const Duration(seconds: 1));

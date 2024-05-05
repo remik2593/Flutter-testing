@@ -10,9 +10,6 @@ import 'package:mocktail/mocktail.dart';
 
 class MockQuotesService extends Mock implements QuotesService {}
 
-/* Goldensy to zrzuty ekranu widżetów. Możemy użyć tych goldensów do porównywania zmian interfejsu użytkownika. 
-Jeśli występują jakiekolwiek zmiany interfejsu użytkownika, możemy porównać goldensy i zobaczyć, co się zmieniło */
-
 void main() {
   testWidgets('Login Widget Test', (WidgetTester tester) async {
     await tester.pumpWidget(
@@ -21,15 +18,9 @@ void main() {
       ),
     );
 
-    // Goldensy zapisujemy w następujacy sposób
     await expectLater(
       find.byType(LoginScreen),
       matchesGoldenFile('login_screen.png'),
-      /* Po jego wygenerowaniu konieczne jest odpalenie w terminalu komendy flutter test --update-goldens
-       To spowoduje uruchomienie testu i wygenerowanie goldensów. Goldensy znajdziesz w folderze testowym.
-       Po aktualizacji ekranu i zmianie np. kolor czcionki, po ponownym uruchomieniu testu, nie powiedzie się on.
-       Wynika to z tego, że goldensy nie są aktualizowane.
-       Aby zaktualizować goldensy, musimy ponownie uruchomić komendę flutter test --update-goldens */
     );
 
     expect(find.text('Login Screen'), findsOneWidget);
