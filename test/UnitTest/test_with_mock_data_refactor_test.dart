@@ -12,6 +12,11 @@ void main() {
   late QuotesNotifier sut_quotesNotifier;
   late MockQuotesService mockQuotesService;
 
+  /* ZMIANY WZGLĘDEM TESTOW PISANYCH W test_with_mock_data.dart:
+  mockQuotesForTesting -> przekazuje listę cytatów
+  arrageQuotesServiceReturnsQuotes uzywamy tam, gdzie potrzebujemy skonfigurować 
+  mockQuotesService tak, aby zwracał listę cytatów. */
+
   setUp(() {
     mockQuotesService = MockQuotesService();
     sut_quotesNotifier = QuotesNotifier(mockQuotesService);
