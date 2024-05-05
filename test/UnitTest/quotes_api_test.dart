@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:Testing/key_constants.dart';
@@ -8,6 +9,15 @@ import 'package:http/http.dart';
 import 'package:http/testing.dart';
 
 void main() {
+  test('json fromJson test', () {
+    final data = jsonDecode(mockQuotes);
+    final quote =
+        data['quotes'].map((quote) => Quotes.fromJson(quote)).toList();
+    expect(quote[0].id, 1);
+    expect(quote[0].author, 'Shree');
+    expect(quote[0].quote, 'I am best');
+  });
+
   test('quotes json test', () {
     final quote = Quotes(1, '', '');
 
